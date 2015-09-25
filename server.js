@@ -16,17 +16,17 @@ amqp.connect('amqp://localhost')
                                     });
                         }).then(function (q) {
                     console.log("Fila criada: %s", q.queue);
-                    channel.consume(q.queue,function(msg){
-                        res.writeHead('200',{
-                            'Content-Type':'application/json'
+                    channel.consume(q.queue, function (msg) {
+                        res.writeHead('200', {
+                            'Content-Type': 'application/json'
                         });
                         res.end(msg.content);
                         //ch.sendToQueue();
-                    },{
-                        noAck:true
+                    }, {
+                        noAck: true
                     });
-                    channel.sendToQueue('banco', new Buffer(),{
-                        replyTo:q.queue
+                    channel.sendToQueue('banco', new Buffer(), {
+                        replyTo: q.queue
                     });
                 });
 

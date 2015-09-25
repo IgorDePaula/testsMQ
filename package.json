@@ -12,6 +12,9 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "amqplib": "^0.3.2"
+    "amqp": "^0.2.4",
+    "amqp-schedule": "0.0.5",
+    "amqplib": "^0.3.2",
+    "moment": "^2.10.6"
   }
 }
